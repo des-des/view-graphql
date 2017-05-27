@@ -1,0 +1,20 @@
+{
+  "name": "view-graphql",
+  "description": "simple view layer for graphql",
+  "author": "Eoin McCarthy",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": "des-des/view-graphql",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "*"
+  }
+}
