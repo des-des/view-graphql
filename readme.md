@@ -6,6 +6,8 @@ This is a proof of concept / prototype.
 
 The idea here is that the graphql query required to render the view is dynamically created from the template.
 
+Demo [here](https://des-des.github.io/view-graphql/)
+
 ## Installation
 
 ```bash
