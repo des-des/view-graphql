@@ -14,7 +14,11 @@
     "publish_example": "git checkout -B gh-pages && npm run build_example && npm run push_example"
   },
   "repository": "des-des/view-graphql",
-  "keywords": [],
+  "keywords": [
+    "GraphQL",
+    "template",
+    "html"
+  ],
   "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
