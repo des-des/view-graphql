@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hn</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+  </head>
+  <body>
+    <h1 class='f1 gray tc'> HN clone in 15 lines of js </h1>
+    <code class='tc db'><pre class='bg-light-silver dib tl pa3 ba bw2 b--gray'>
+require('view-graphql')({
+  queryTarget: 'https://www.graphqlhub.com/graphql',
+  bindToDom: true
+}, (component, graph) =&gt; component`
+  &lt;div class='tc'&gt;
+    &lt;h2&gt; HN &lt;/h2&gt;
+    ${graph('hn', 'topStories(limit: 10)').map(graph =&gt; component`
+    &lt;a href=${graph('url')} class='link'&gt;
+      &lt;div class='w-80 bg-red dib ma2 bg-animate hover-bg-light-red'&gt;
+        &lt;h3 class='f3'&gt; [${graph('score')}] : ${graph('title')} &lt;/h3&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+    `)}
+  &lt;/div&gt;`
+)
+    </pre><code>
+    <div id='root'> </div>
+    <script src="/hn.js"></script>
+  </body>
+</html>
