@@ -2,6 +2,10 @@
 
 simple view layer for graphql
 
+This is a proof of concept / prototype.
+
+The idea here is that the graphql query required to render the view is dynamically created from the template.
+
 ## Installation
 
 ```bash
@@ -13,7 +17,24 @@ npm install --save view-graphql
 ```javascript
 var viewGraphql = require('view-graphql')
 
-viewGraphql()  // => true
+viewGraphql({
+  queryTarget: 'https://www.graphqlhub.com/graphql', // endpoint to query
+  bindToDom: true // causes automatic injection of html to node with id 'root'
+}, (
+  component, // template literal tag function
+  graph // this walks the graph exposed by the endpoint. The result gets injected into the template
+) => component`
+  <div class='tc'>
+    <h2> HN </h2>
+    ${graph('hn', 'topStories(limit: 10)').map(graph => component`
+    <a href=${graph('url')} class='link'>
+      <div class='w-80 bg-red dib ma2 bg-animate hover-bg-light-red'>
+        <h3 class='f3'> [${graph('score')}] : ${graph('title')} </h3>
+      </div>
+    </a>
+    `)}
+  </div>`
+)
 ```
 
 ## License
