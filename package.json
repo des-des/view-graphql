@@ -2,7 +2,7 @@
   "name": "view-graphql",
   "description": "simple view layer for graphql",
   "author": "Eoin McCarthy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "files": [
     "index.js"
@@ -16,12 +16,13 @@
   "repository": "des-des/view-graphql",
   "keywords": [],
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
   "devDependencies": {
     "ava": "*",
     "hapi": "^16.1.1",
     "hapi-browserify": "0.0.4",
-    "inert": "^4.2.0",
-    "isomorphic-fetch": "^2.2.1"
+    "inert": "^4.2.0"
   }
 }
