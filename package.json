@@ -8,7 +8,10 @@
     "index.js"
   ],
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "push_example": "git add -f index.html hn.js && git commit -m \"commit example\" && git push origin gh-pages",
+    "build_example": "copyfiles -u 1 ./examples/index.html ./ && browserify ./examples/hn.js -o ./hn.js",
+    "publish_example": "git checkout -B gh-pages && npm run build_example && npm run push_example"
   },
   "repository": "des-des/view-graphql",
   "keywords": [],
